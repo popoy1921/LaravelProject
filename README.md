@@ -1,3 +1,11 @@
+How to run the project in your local:
+1. Clone the project: https://github.com/popoy1921/LaravelPractice to get a copy on your local
+2. Run the command in your terminal `composer install` to download dependencies
+3. Integrating database for data storage. Here I am using XAMPP mySQL. You may use any configuration you prefer but you may change some environment config once you do that.
+4. Run the command in your terminal `php artisan migrate:fresh` to download dependencies
+
+May explore:
+1. How to have a stucture typehinting if possible
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

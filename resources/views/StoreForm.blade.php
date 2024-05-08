@@ -9,19 +9,41 @@
 </head>
 <body>
     <div class="px-5 pt-4">
+        <!-- Errors encounter during validation -->
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
+        <!-- Created Product -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <!-- Store Form -->
         <h3>{{ $sTitle }}</h3>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" action="{{url('/App/Store/Create')}}" enctype="multipart/form-data">
+            @csrf
+            @if ($bIsUpdate === true)
             <div class="form-group">
                 <label for="title">Store ID</label>
-                <input type="text" name="id" class="form-control" {{ $bIsUpdate ? 'disabled' : '' }}>
+                <input type="text" name="id" class="form-control" disabled>
             </div>
+            @endif
             <div class="form-group">
                 <label for="title">Store Name</label>
-                <input type="text" name="store_name" class="form-control">
+                <input type="text" name="name" class="form-control" value="{{ old('name') }}">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" class="form-control"></textarea>
+                <textarea name="description" class="form-control">{{ old('description') }}</textarea>
             </div>
             <div class="form-group">
                 <label for="image">Logo</label>

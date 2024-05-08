@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,3 +67,5 @@ Route::get('/RouteMiddleWare/Sample1', [PageController::class, 'showSamplePage']
 
 // Application Routes
 Route::get('/Store/{StoreId?}', [PageController::class, 'showStoreFormPage'])->name('StoreFormPage');
+
+Route::post('/App/Store/Create', [StoreController::class, 'createStore']);
