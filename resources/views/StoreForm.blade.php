@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @include('common.jquery')
     @include('common.bootstrap')
-    <title>Document</title>
+    <title>{{ $sTitle }}</title>
 </head>
 <body>
     <div class="px-5 pt-4">
